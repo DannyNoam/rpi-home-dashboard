@@ -11,6 +11,7 @@ To bundle all of the components and scripts into one single file you need to run
 Some images here: http://imgur.com/a/b8y1s
 
 ### Prerequisites
+- A CORS-enabled browser. For Chrome, I reccommend: https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en
 - npm (Node Package Manager) installed
 - gulp
 
