@@ -1,0 +1,35 @@
+{
+  "name": "rpi-home-dashboard",
+  "author": "DannyNoam",
+  "license": "ISC",
+  "version": "1.0.0",
+  "description": "To set up the app, clone the repository and run 'npm install' followed by 'gulp'.",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.0.1",
+    "combokeys": "^2.4.6",
+    "express": "^4.13.4",
+    "file-extension": "2.0.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-jsx": "^2.0.1",
+    "gulp-nodemon": "^2.1.0",
+    "gulp-react": "^3.0.1",
+    "underscore": "^1.8.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/DannyNoam/rpi-home-dashboard"
+  },
+  "keywords": [
+    "raspberry-pi",
+    "home-dashboard",
+    "rpi"
+  ]
+}

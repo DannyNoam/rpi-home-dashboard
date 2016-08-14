@@ -1,0 +1,4 @@
+export default ({
+	TRAINS_FROM: 'EAST_CROYDON',
+	TRAINS_TO: 'LONDON_VICTORIA'
+});

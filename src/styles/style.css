@@ -1,0 +1,307 @@
+html, body {
+    font-size: 0px !important;
+    color: #000;
+}
+
+.marquee {
+    width: 87%;
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+    position:fixed;
+    bottom: 2%;
+    left: 13%;
+    background-color: #7A0000;
+    color: white;
+    height: 6%;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+.marquee span {
+    display: inline-block;
+    padding-left: 100%;
+    text-indent: 0;
+    animation: marquee 120s linear infinite;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+@keyframes marquee {
+    0%   { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+}
+
+@font-face {
+    font-family: digitalboard;
+    src: url(http://ff.static.1001fonts.net/e/n/enhanced-dot-digital-7.regular.ttf);
+}
+
+@font-face {
+    font-family: londontube;
+    src: url(http://ff.static.1001fonts.net/s/t/station.medium.ttf);
+}
+
+@font-face {
+    font-family: chalkboard;
+    src: url(http://ff.static.1001fonts.net/k/g/kg-tangled-up-in-you.regular.ttf);
+}
+
+@font-face {
+    font-family: handwritten;
+    src: url(http://ff.static.1001fonts.net/y/a/yahfie.normal.ttf);
+}
+
+p.arrivals {
+    font-family: 'digitalboard';
+    font-size: 20px;
+    background-color: #222;
+    color: #E4C214;
+    margin: 0 auto;
+    padding: 5px;
+    text-align: left;
+    text-transform: uppercase;
+    border: 3px solid #000;
+    box-shadow: 4px 4px 4px #888888;
+}
+
+span.arrival-time {
+    float: right;
+}
+
+div.arrival-group {
+    display: inline-block;
+    vertical-align:top;
+    padding: 5px;
+    width: 25%;
+    height: 25%;
+}
+
+div.tube-status-group {
+    width: 25%;
+}
+
+div#time {
+    width: 7%;
+    padding-right: 1%;
+    padding-top: 4px;
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 2%;
+    text-align: center;
+    font-size: 25px;
+    background-color: #000;
+    display: inline-block;
+    text-indent: 0;
+    color: white;
+    height: 6%;
+}
+
+div#weather {
+    width: 7%;
+    padding-right: 2%;
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 2%;
+    text-align: left;
+    font-size: 18px;
+    background-color: #000;
+    display: inline-block;
+    text-indent: 0;
+    color: white;
+    height: 6%;
+    left: 6%;
+    padding-top: 10px;
+}
+
+div.travel-information {
+    width: 100%;
+}
+
+div.tram-stops {
+    display: inline;
+}
+
+div.very-bad {
+    background-color: red;
+    display: inline;
+    float: right;
+}
+
+div.slightly-bad {
+    background-color: orange;
+    display: inline;
+    float: right;
+}
+
+div.good {
+    background-color: green;
+}
+
+div.tube-status {
+    float: right;
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #fff;
+    text-align: center;
+    display: inline;
+    padding-top: 10px;
+    border-left: 2px solid #000;
+}
+
+div.tube-line-status {
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+    font-family: londontube;
+    font-size: 15.8px;
+    border: 0.5px solid #000;
+    box-shadow: 4px 4px 4px #888888;
+
+}
+
+p.tube-line-status {
+    padding-top: 10px;
+    width: 50%;
+    text-align: center;
+}
+
+div.left-side-component {
+    float: left;
+    width: 50%;
+}
+
+div.right-side-components {
+    float: right;
+    width: 50%;
+}
+
+iframe.calendar {
+    border-width: 0;
+    width: 100%;
+    height: 480px;
+    border: 1px solid #000;
+    border-width: 1px 0px 1px 1px
+}
+
+div.list {
+    height: 210px;
+    width: 50%;
+    display: inline-block;
+    background-size: 100% auto;
+    border: 1px solid #000;
+    margin: 0 auto;
+    position: relative;
+}
+
+div.todo {
+    background-image: url('../resources/chalkboard-background.jpg');
+    float: right;
+}
+
+div.shopping {
+    background-image: url('../resources/lined-paper.jpg');
+    float: right;
+    height: 480px;
+}
+
+div.image-stream {
+    height: 270px;
+    width: 50%;
+    border-width: 0;
+    border: 1px solid #000;
+    border-width: 1px 1px 0px 1px;
+    background-color: #222;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+img.image-stream {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+}
+
+img.width-100 {
+    width: 100%;
+}
+
+img.height-100 {
+    height: 100%;
+}
+
+p.list-title-todo {
+    font-family: chalkboard;
+    color: #fff;
+    text-align: center;
+    font-size: 30px;
+    text-decoration: underline;
+    margin: 0 auto;
+}
+
+p.list-title-shopping {
+    font-family: handwritten;
+    color: #000;
+    text-align: center;
+    font-size: 30px;
+    text-decoration: underline;
+    margin: 0 auto;
+}
+
+p.list-item-todo {
+    font-family: chalkboard;
+    font-size: 18px;
+    color: #fff;
+    margin: 0 auto;
+    text-align: center;
+}
+
+p.list-item-shopping {
+    font-family: handwritten;
+    font-size: 16px;
+    color: #597bd5;
+    margin: 0 auto;
+    padding-left: 2px;
+    padding-right: 2px;
+    text-align: center;
+}
+
+p.list-item-big, span.list-item-big {
+    font-size: 26px;
+}
+
+p.list-item-medium, span.list-item-medium {
+    font-size: 18px;
+}
+
+p.list-item-small, span.list-item-small {
+    font-size: 15px;
+}
+
+input.list {
+    width: 70%;
+    float:left;
+}
+
+button.list {
+    right: 0;
+    width:30%;
+    float:right;
+}
+
+div.list-input {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
