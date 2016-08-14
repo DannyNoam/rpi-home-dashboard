@@ -35,22 +35,22 @@ html, body {
 
 @font-face {
     font-family: digitalboard;
-    src: url(http://ff.static.1001fonts.net/e/n/enhanced-dot-digital-7.regular.ttf);
+    src: url(../font/enhanced-dot-digital-7.regular.ttf);
 }
 
 @font-face {
     font-family: londontube;
-    src: url(http://ff.static.1001fonts.net/s/t/station.medium.ttf);
+    src: url(../font/station.medium.ttf);
 }
 
 @font-face {
     font-family: chalkboard;
-    src: url(http://ff.static.1001fonts.net/k/g/kg-tangled-up-in-you.regular.ttf);
+    src: url(../font/kg-tangled-up-in-you.regular.ttf);
 }
 
 @font-face {
     font-family: handwritten;
-    src: url(http://ff.static.1001fonts.net/y/a/yahfie.normal.ttf);
+    src: url(../font/yahfie.normal.ttf);
 }
 
 p.arrivals {

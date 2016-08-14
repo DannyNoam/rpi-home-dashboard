@@ -11,9 +11,8 @@ To bundle all of the components and scripts into one single file you need to run
 Some images here: http://imgur.com/a/b8y1s
 
 ### Prerequisites
-- A CORS-enabled browser. For Chrome, I reccommend: https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en
-- NPM (Node Package Manager) installed
-- Gulp
+- npm (Node Package Manager) installed
+- gulp
 
 ### Weather
 Firstly, you'll need to get the longitude and latitude of where your dashboard will be used. Go to http://en.mygeoposition.com/, get your location details and make a note of them. Next, you'll need to edit src/constants/CurrentLocation.js, and replace the placeholder text with your location details.
