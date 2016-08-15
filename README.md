@@ -45,7 +45,7 @@ Next, how far away do you live from the station where you want to see trains dep
 You'll also (probably) want to see train departures relevant to you. Edit TRAINS_FROM and TRAINS_TO inside src/config/trainTimesConfig.js appropriately. You'll also need to edit constants/TrainConstants.js (in the same format that is present) with the relevant crs codes. You'll need to research crs codes here: http://www.railwaycodes.org.uk/crs/CRS0.shtm
 
 ### Tram Times
-It's probably pretty likely you don't have trams where you live - they're really not that common. However, with TFL's new shiny unified API, you **should** be able to change the endpoint to pretty much anything (bus, tube, train etc.) that is an **arrivals** endpoint. The endpoint is located inside src/constants/Endpoints.js - simply change this to any TFL Stoppoint URL, and things should be golden. You'll also need to change the line inside componentDidMount within src/components/TramStopArrivals.jsx that passes your local bus/tram/train station.
+It's probably pretty likely you don't have trams where you live - they're really not that common. However, with TFL's new shiny unified API, you **should** be able to change the endpoint to pretty much anything (bus, tube, train etc.) that is an **arrivals** endpoint (see here for more details, under 'Arrival predictions': https://api-portal.tfl.gov.uk/docs). The endpoint is located inside src/constants/Endpoints.js - simply change this to any TFL Stoppoint URL, and things should be golden. You'll also need to change the line inside componentDidMount within src/components/TramStopArrivals.jsx that passes your local bus/tram/train station.
 
 ### Tube Line Status
 This should work out of the box!
