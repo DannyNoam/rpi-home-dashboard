@@ -58,7 +58,7 @@ export default React.createClass({
 	_getImageClassName: function (imageAttributes) {
 		var { width, height } = this.state.imageAttributes;
 
-		return width >= height ? "width-100" : "height-100";
+		return width > height ? "width-100" : "height-100";
 	},
 
 	_getVerticallyAlignedMarginTopPixels: function () {
