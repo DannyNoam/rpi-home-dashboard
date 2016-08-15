@@ -9,7 +9,7 @@ import fileExtension from 'file-extension';
 
 export default React.createClass({
 
-	displayName: 'ImageStream',
+	displayName: 'GifStream',
 
 	componentDidMount: function () {
 		pollFor(() => { this._getImageData() }, this.props.refreshRate);
