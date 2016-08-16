@@ -58,7 +58,7 @@ export default React.createClass({
 	_constructEndpoint: function () {
 		var todaysDateTime = new Date();
 		var todaysDate = todaysDateTime.toJSON().slice(0,10);
-		var dateTimeOfTrainsDeparture = new Date(todaysDateTime.getTime() + (TrainConstants.TIME_AWAY_FROM_STATION_MINS * 60000));
+		var dateTimeOfTrainsDeparture = new Date(todaysDateTime.getTime() + (trainTimesConfig.TIME_AWAY_FROM_STATION_MINS * 60000));
 		var timeOfTrainsDeparture = formatTimePart(dateTimeOfTrainsDeparture.getHours()) + ":" + formatTimePart(dateTimeOfTrainsDeparture.getMinutes());
 
 		return Endpoints.TRAINS.BASE_URL + TrainConstants.STATION_CODES.CRS[trainTimesConfig.TRAINS_FROM] + '/' + todaysDate
