@@ -17,7 +17,8 @@ export default React.createClass({
 
 	getInitialState: function () {
 	    return {
-	        imageData: null
+	        imageUrl: null,
+	        imageAttributes: null
 	    };
 	},
 
