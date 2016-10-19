@@ -1,0 +1,27 @@
+{
+    "extends": ["eslint:recommended", "plugin:react/recommended"],
+    "plugins": ["react"],
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": 6,
+        "ecmaFeatures": {
+            "impliedStrict": true,
+            "experimentalObjectRestSpread": true,
+            "jsx": true
+        }
+    },
+    "env": {
+        "es6": true
+    },
+    "rules": {
+        "space-before-function-paren": 0
+    },
+    "globals": {
+        "require": true,
+        "document": true,
+        "setInterval": true,
+        "window": true,
+        "Image": true,
+        "XMLHttpRequest": true
+    }
+}
