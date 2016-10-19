@@ -1,15 +1,15 @@
 export function calculateMinutesUntilArrival(timeOfArrivalData) {
-	var timeOfArrival = new Date(timeOfArrivalData);
-	var minutesUntilArrival = Math.round((timeOfArrival.getTime() - Date.now())/60000);
+	let timeOfArrival = new Date(timeOfArrivalData);
+	let minutesUntilArrival = Math.round((timeOfArrival.getTime() - Date.now())/60000);
 
 	return minutesUntilArrival > 0 ? minutesUntilArrival : 0;
 }
 
 export function getHumanReadableTimeObject() {
-	var today = new Date();
-	var hours = formatTimePart(today.getHours());
-	var minutes = formatTimePart(today.getMinutes());
-	var time = hours + ":" + minutes;
+	let today = new Date();
+	let hours = formatTimePart(today.getHours());
+	let minutes = formatTimePart(today.getMinutes());
+	let time = hours + ":" + minutes;
 
 	return time;
 }

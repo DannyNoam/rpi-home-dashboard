@@ -23,7 +23,7 @@ export default React.createClass({
   },
   
   _refreshCalendar: function () {
-    var iframe = document.getElementById('calendar');
+    let iframe = document.getElementById('calendar');
     iframe.src = iframe.src;
   }
 });

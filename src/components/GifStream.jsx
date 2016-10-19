@@ -36,7 +36,7 @@ export default React.createClass({
   _getImageData: function () {
     executeXHR('GET', Endpoints.REDDIT.GIFS, (xhr) => {
       const FIRST_IMAGE = 0;
-      var imageUrl = JSON.parse(xhr.responseText).data.children[FIRST_IMAGE].data.url;
+      let imageUrl = JSON.parse(xhr.responseText).data.children[FIRST_IMAGE].data.url;
       
       if (this._getImageFileType(imageUrl) === "gifv") {
         imageUrl = this._convertToGif(imageUrl);
@@ -51,32 +51,32 @@ export default React.createClass({
   },
   
   _renderImage: function () {
-    var imageSource = this.state.imageUrl;
-    var className = this._getImageClassName();
+    let imageSource = this.state.imageUrl;
+    let className = this._getImageClassName();
     
     return this._renderGif(imageSource, className);
     
   },
   
   _getImageClassName: function () {
-    var {width, height} = this.state.imageAttributes;
+    let {width, height} = this.state.imageAttributes;
     
     return width > height ? "width-100" : "height-100";
   },
   
   _getVerticallyAlignedMarginTopPixels: function () {
     const IMAGE_AREA_HEIGHT = 270;
-    var actualImageWidth = window.innerWidth / 4;
-    var heightDivisionFactor = this.state.imageAttributes.width / actualImageWidth;
-    var actualImageHeight = this.state.imageAttributes.height / heightDivisionFactor;
+    let actualImageWidth = window.innerWidth / 4;
+    let heightDivisionFactor = this.state.imageAttributes.width / actualImageWidth;
+    let actualImageHeight = this.state.imageAttributes.height / heightDivisionFactor;
+    let remainingSpaceToFillPx = IMAGE_AREA_HEIGHT - actualImageHeight;
     
-    var remainingSpaceToFillPx = IMAGE_AREA_HEIGHT - actualImageHeight;
     return Math.round(remainingSpaceToFillPx / 2);
   },
   
   _renderGif: function (imageSource, className) {
-    var style;
-    var constructedClassName = "image-stream " + className;
+    let style;
+    let constructedClassName = "image-stream " + className;
     
     if (className === "width-100") {
       style = {
@@ -98,10 +98,10 @@ export default React.createClass({
   },
   
   _getImageAttributes: function (globalContext) {
-    var image = new Image();
+    let image = new Image();
     
     image.onload = function () {
-      var imageAttributes = {
+      let imageAttributes = {
         width: this.naturalWidth,
         height: this.naturalHeight
       };

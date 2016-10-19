@@ -39,8 +39,8 @@ export default React.createClass({
   },
   
   _renderArrivalsData: function (direction, maxNumberToRender) {
-    var arrivalsData = this._getArrivalsByDirection(direction, maxNumberToRender);
-    var renderedArrivalsData = [];
+    let arrivalsData = this._getArrivalsByDirection(direction, maxNumberToRender);
+    let renderedArrivalsData = [];
     
     arrivalsData.forEach((arrivalData) => {
       renderedArrivalsData.push(
@@ -59,11 +59,11 @@ export default React.createClass({
   },
   
   _getArrivalsByDirection: function (direction, numberToRender) {
-    var arrivalsByDirection = underscore.filter(this.state.arrivalsData, (arrival) => arrival.direction === direction);
-    var orderedArrivalsData = this._orderArrivalsData(arrivalsByDirection);
-    var arrivalsData = [];
+    let arrivalsByDirection = underscore.filter(this.state.arrivalsData, (arrival) => arrival.direction === direction);
+    let orderedArrivalsData = this._orderArrivalsData(arrivalsByDirection);
+    let arrivalsData = [];
     
-    for (var i = 0; i < numberToRender; i++) {
+    for (let i = 0; i < numberToRender; i++) {
       if (!orderedArrivalsData[i]) {
         arrivalsData[i] = this._getDefaultTramArrivalDataObject();
       } else {

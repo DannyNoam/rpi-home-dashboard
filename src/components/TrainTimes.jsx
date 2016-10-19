@@ -36,15 +36,15 @@ export default React.createClass({
   },
   
   _getTrainData: function () {
-    var endpoint = this._constructEndpoint();
+    let endpoint = this._constructEndpoint();
     
     executeXHR('GET', endpoint, (xhr) => this.setState({trainData: JSON.parse(xhr.responseText)}));
   },
   
   _renderDepartureData: function (numberToRender) {
-    var renderedArrivalsData = [];
+    let renderedArrivalsData = [];
     
-    for (var i = 0; i < numberToRender; i++) {
+    for (let i = 0; i < numberToRender; i++) {
       renderedArrivalsData.push(
         <p className="arrivals">
 					<span className="destination-name">
@@ -61,10 +61,10 @@ export default React.createClass({
   },
   
   _constructEndpoint: function () {
-    var todaysDateTime = new Date();
-    var todaysDate = todaysDateTime.toJSON().slice(0, 10);
-    var dateTimeOfTrainsDeparture = new Date(todaysDateTime.getTime() + (trainTimesConfig.TIME_AWAY_FROM_STATION_MINS * 60000));
-    var timeOfTrainsDeparture = formatTimePart(dateTimeOfTrainsDeparture.getHours()) + ":" + formatTimePart(dateTimeOfTrainsDeparture.getMinutes());
+    let todaysDateTime = new Date();
+    let todaysDate = todaysDateTime.toJSON().slice(0, 10);
+    let dateTimeOfTrainsDeparture = new Date(todaysDateTime.getTime() + (trainTimesConfig.TIME_AWAY_FROM_STATION_MINS * 60000));
+    let timeOfTrainsDeparture = formatTimePart(dateTimeOfTrainsDeparture.getHours()) + ":" + formatTimePart(dateTimeOfTrainsDeparture.getMinutes());
     
     return Endpoints.TRAINS.BASE_URL + TrainConstants.STATION_CODES.CRS[trainTimesConfig.TRAINS_FROM] + '/' + todaysDate
       + '/' + timeOfTrainsDeparture + '/timetable.json?app_id=' + ApiKeys.TRAINS.ID
