@@ -11,18 +11,12 @@
         }
     },
     "env": {
-        "es6": true
+        "es6": true,
+        "browser": true,
+        "node": true
     },
     "rules": {
         "space-before-function-paren": 0,
         "no-var": 2
-    },
-    "globals": {
-        "require": true,
-        "document": true,
-        "setInterval": true,
-        "window": true,
-        "Image": true,
-        "XMLHttpRequest": true
     }
 }
