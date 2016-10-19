@@ -4,7 +4,7 @@ export function executeXHR(method, endpoint, action, data, contentType) {
 	xhr.open(method, endpoint, true);
     xhr.onload = action.bind(this, xhr);
     if(contentType) {
-    	xhr.setRequestHeader("Content-Type", contentType);
+      xhr.setRequestHeader("Content-Type", contentType);
     }
     xhr.send(data);
 }

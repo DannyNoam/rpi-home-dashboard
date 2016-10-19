@@ -1,15 +1,18 @@
 const gulp = require('gulp');
-const babel = require('gulp-babel');
+const fs = require('fs');
+const eslint = require('gulp-eslint');
+const browserify = require('browserify');
 
-var nodemon = require('gulp-nodemon');
-var jsx = require('gulp-jsx');
-var browserify = require('browserify');
-var react = require('gulp-react');
-var fs = require('fs');
+gulp.task('lint', () => {
+  return gulp.src(['**/*.js', '**/*.jsx', '!node_modules/**', '!bundle.js'])
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
+});
 
-gulp.task('default', function () {
+gulp.task('default', ['lint'], function () {
   return browserify('./src/index.js')
-      .transform("babelify", {presets: ['es2015', 'react']})
-      .bundle()
-      .pipe(fs.createWriteStream("bundle.js"));
+    .transform('babelify', {presets: ['es2015', 'react']})
+    .bundle()
+    .pipe(fs.createWriteStream('bundle.js'));
 });
