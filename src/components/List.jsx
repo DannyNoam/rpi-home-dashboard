@@ -50,9 +50,9 @@ export default React.createClass({
   },
   
   _setEditKeys: function () {
-    var Combokeys = require("combokeys");
-    var combokeys = new Combokeys(document.documentElement);
-    var editKey = this.props.editKey || "e";
+    let Combokeys = require("combokeys");
+    let combokeys = new Combokeys(document.documentElement);
+    let editKey = this.props.editKey || "e";
     
     combokeys.bind(editKey, () => this._setEditable(true));
     combokeys.bind("q", () => this._setEditable(false));
@@ -65,8 +65,8 @@ export default React.createClass({
   },
   
   _renderListItems: function () {
-    var renderedItems = [];
-    var numberOfItems = this.state.listItems.length;
+    let renderedItems = [];
+    let numberOfItems = this.state.listItems.length;
     
     this.state.listItems.forEach((item) => {
       renderedItems.push(
@@ -81,7 +81,7 @@ export default React.createClass({
   },
   
   _constructClassName: function (prefix, numberOfItems) {
-    var listItemSizeClassName = numberOfItems ? this._getListItemSizeClassName(numberOfItems) : "";
+    let listItemSizeClassName = numberOfItems ? this._getListItemSizeClassName(numberOfItems) : "";
     
     return prefix + this.props.type + listItemSizeClassName;
   },
@@ -99,8 +99,8 @@ export default React.createClass({
   },
   
   _renderRemoveLink: function (item) {
-    var numberOfItems = this.state.listItems.length;
-    var glyphiconClassName = "glyphicon glyphicon-remove " + this._getListItemSizeClassName(numberOfItems);
+    let numberOfItems = this.state.listItems.length;
+    let glyphiconClassName = "glyphicon glyphicon-remove " + this._getListItemSizeClassName(numberOfItems);
     
     return (
       <a>
@@ -110,7 +110,7 @@ export default React.createClass({
   },
   
   _removeItem: function (item) {
-    var updatedListItems = this.state.listItems.filter((listItem) => {
+    let updatedListItems = this.state.listItems.filter((listItem) => {
       return listItem.value !== item.value
     });
     
@@ -120,8 +120,8 @@ export default React.createClass({
   },
   
   _addItem: function (id) {
-    var item = this._constructListInputItem(id);
-    var updatedListItems = this.state.listItems;
+    let item = this._constructListInputItem(id);
+    let updatedListItems = this.state.listItems;
     updatedListItems.push(item);
     
     executeXHR('PUT', this.props.endpoint, (xhr) => {

@@ -22,7 +22,7 @@ export default React.createClass({
   },
   
   componentDidMount: function () {
-    var weatherEndpoint = this._constructWeatherEndpoint(Endpoints.WEATHER, ApiKeys.WEATHER, CurrentLocation.LATITUDE, CurrentLocation.LONGITUDE);
+    let weatherEndpoint = this._constructWeatherEndpoint(Endpoints.WEATHER, ApiKeys.WEATHER, CurrentLocation.LATITUDE, CurrentLocation.LONGITUDE);
     
     pollFor(() => {
       this._getWeatherData(weatherEndpoint)
@@ -39,7 +39,7 @@ export default React.createClass({
   },
   
   _renderWeatherData: function () {
-    var celciusTemperature = convertFahrenheitToCelcius(this.state.weatherData.currently.temperature);
+    let celciusTemperature = convertFahrenheitToCelcius(this.state.weatherData.currently.temperature);
     
     return " (" + celciusTemperature + "°C)";
   },
@@ -53,15 +53,15 @@ export default React.createClass({
   },
   
   _getDayOrNight: function () {
-    var hour = (new Date()).getHours();
+    let hour = (new Date()).getHours();
     
     return hour > 18 || hour < 6 ? TimeConstants.NIGHT : TimeConstants.DAY;
   },
   
   _constructIconClassName: function () {
-    var dayOrNight = this._getDayOrNight();
-    var weatherStatus = this.state.weatherData.currently.icon;
-    var weatherIcon = getWeatherIcon(weatherStatus, dayOrNight);
+    let dayOrNight = this._getDayOrNight();
+    let weatherStatus = this.state.weatherData.currently.icon;
+    let weatherIcon = getWeatherIcon(weatherStatus, dayOrNight);
     
     return 'wi ' + weatherIcon;
   }

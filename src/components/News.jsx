@@ -34,14 +34,14 @@ export default React.createClass({
   },
   
   _getNewsData: function (newsSource) {
-    var newsEndpoint = Endpoints.NEWS + newsSource + "&apiKey=" + ApiKeys.NEWS;
+    let newsEndpoint = Endpoints.NEWS + newsSource + "&apiKey=" + ApiKeys.NEWS;
     
     executeXHR('GET', newsEndpoint, (xhr) => this.setState({newsData: JSON.parse(xhr.responseText)}));
   },
   
   _renderNewsData: function () {
-    var newsData = [];
-    var newsSeparator = ' ◆ '
+    let newsData = [];
+    let newsSeparator = ' ◆ '
     
     this.state.newsData.articles.forEach((news) => newsData.push(this._removeFullStopFromNewsDescription(news.description) + newsSeparator));
     

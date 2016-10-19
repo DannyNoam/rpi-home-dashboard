@@ -40,7 +40,7 @@ export default React.createClass({
   },
   
   _getLineStatus: function (line) {
-    var lineDetails = underscore.find(this.state.tubeStatusData, (tubeStatus) => tubeStatus.id === line);
+    let lineDetails = underscore.find(this.state.tubeStatusData, (tubeStatus) => tubeStatus.id === line);
     
     return lineDetails.lineStatuses[0].statusSeverityDescription;
   },
@@ -58,10 +58,10 @@ export default React.createClass({
   },
   
   _renderLineStatus: function (line) {
-    var lineStatus = this._getLineStatus(line);
-    var className = this._getLineClassName(lineStatus);
-    var lineBackgroundColour = this._getLineBackgroundColour(line);
-    var lineTextColour = this._getLineTextColour(line);
+    let lineStatus = this._getLineStatus(line);
+    let className = this._getLineClassName(lineStatus);
+    let lineBackgroundColour = this._getLineBackgroundColour(line);
+    let lineTextColour = this._getLineTextColour(line);
     
     return (
       <div className="tube-line-status" style={ {backgroundColor: lineBackgroundColour} }>
