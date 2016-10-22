@@ -34,19 +34,23 @@ export default React.createClass({
   },
   
   _getImageData: function () {
-    executeXHR('GET', Endpoints.REDDIT.GIFS, (xhr) => {
-      const FIRST_IMAGE = 0;
-      let imageUrl = JSON.parse(xhr.responseText).data.children[FIRST_IMAGE].data.url;
-      
-      if (this._getImageFileType(imageUrl) === "gifv") {
-        imageUrl = this._convertToGif(imageUrl);
+    executeXHR({
+      method: 'GET',
+      endpoint: Endpoints.REDDIT.GIFS,
+      action: (xhr) => {
+        const FIRST_IMAGE = 0;
+        let imageUrl = JSON.parse(xhr.responseText).data.children[FIRST_IMAGE].data.url;
+  
+        if (this._getImageFileType(imageUrl) === "gifv") {
+          imageUrl = this._convertToGif(imageUrl);
+        }
+  
+        this.setState({
+          imageUrl: imageUrl,
+        });
+  
+        this._getImageAttributes(this);
       }
-      
-      this.setState({
-        imageUrl: imageUrl,
-      });
-      
-      this._getImageAttributes(this);
     });
   },
   

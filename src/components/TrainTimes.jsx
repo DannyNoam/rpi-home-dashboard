@@ -38,7 +38,11 @@ export default React.createClass({
   _getTrainData: function () {
     let endpoint = this._constructEndpoint();
     
-    executeXHR('GET', endpoint, (xhr) => this.setState({trainData: JSON.parse(xhr.responseText)}));
+    executeXHR({
+      method: 'GET',
+      endpoint: endpoint,
+      action: (xhr) => this.setState({trainData: JSON.parse(xhr.responseText)})
+    });
   },
   
   _renderDepartureData: function (numberToRender) {

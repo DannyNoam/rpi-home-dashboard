@@ -36,7 +36,11 @@ export default React.createClass({
   },
   
   _getTFLTubeStatus: function (endpoint) {
-    executeXHR('GET', endpoint, (xhr) => this.setState({tubeStatusData: JSON.parse(xhr.responseText)}));
+    executeXHR({
+      method: 'GET',
+      endpoint: endpoint,
+      action: (xhr) => this.setState({tubeStatusData: JSON.parse(xhr.responseText)})
+    });
   },
   
   _getLineStatus: function (line) {

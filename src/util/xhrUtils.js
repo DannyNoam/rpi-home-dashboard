@@ -1,10 +1,15 @@
-export function executeXHR(method, endpoint, action, data, contentType) {
+export function executeXHR(properties) {
 	let xhr = new XMLHttpRequest();
-
-	xhr.open(method, endpoint, true);
-    xhr.onload = action.bind(this, xhr);
-    if(contentType) {
-      xhr.setRequestHeader("Content-Type", contentType);
-    }
-    xhr.send(data);
+  xhr.open(properties.method, properties.endpoint, true);
+  xhr.onload = properties.action.bind(this, xhr);
+  
+  if(properties.errorCallback) {
+    xhr.addEventListener('error', properties.errorCallback);
+  }
+  
+  if(properties.contentType) {
+    xhr.setRequestHeader("Content-Type", properties.contentType);
+  }
+  
+  xhr.send(properties.data);
 }

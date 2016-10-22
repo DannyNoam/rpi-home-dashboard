@@ -21,7 +21,7 @@ export default React.createClass({
   
   componentDidMount: function () {
     pollFor(() => {
-      this._getNewsData(NewsConstants.BBC);
+      this._getNewsData(NewsConstants.SOURCES.BBC);
     }, this.props.refreshRate);
   },
   
@@ -36,14 +36,23 @@ export default React.createClass({
   _getNewsData: function (newsSource) {
     let newsEndpoint = Endpoints.NEWS + newsSource + "&apiKey=" + ApiKeys.NEWS;
     
-    executeXHR('GET', newsEndpoint, (xhr) => this.setState({newsData: JSON.parse(xhr.responseText)}));
+    executeXHR({
+      method: 'GET',
+      endpoint: newsEndpoint,
+      action: (xhr) => this.setState({newsData: JSON.parse(xhr.responseText)}),
+      errorCallback: () => { this.setState({newsData: null}) }
+    });
   },
   
   _renderNewsData: function () {
     let newsData = [];
-    let newsSeparator = ' ◆ '
+    let newsSeparator = ' ◆ ';
     
-    this.state.newsData.articles.forEach((news) => newsData.push(this._removeFullStopFromNewsDescription(news.description) + newsSeparator));
+    if(this.state.newsData.articles) {
+      this.state.newsData.articles.forEach((news) => newsData.push(this._removeFullStopFromNewsDescription(news.description) + newsSeparator));
+    } else {
+      return NewsConstants.FALLBACK_TEXT;
+    }
     
     return newsData;
   },
