@@ -46,7 +46,11 @@ export default React.createClass({
   },
   
   _getListData: function () {
-    executeXHR('GET', this.props.endpoint, (xhr) => this.setState({listItems: JSON.parse(xhr.responseText)}));
+    executeXHR({
+      method: 'GET',
+      endpoint: this.props.endpoint,
+      action: (xhr) => { this.setState({listItems: JSON.parse(xhr.responseText)}) }
+    });
   },
   
   _setEditKeys: function () {
@@ -113,10 +117,8 @@ export default React.createClass({
     let updatedListItems = this.state.listItems.filter((listItem) => {
       return listItem.value !== item.value
     });
-    
-    executeXHR('PUT', this.props.endpoint, (xhr) => {
-      this.setState({listItems: JSON.parse(xhr.responseText)})
-    }, JSON.stringify(updatedListItems), "application/json");
+  
+    this._updateList(updatedListItems);
   },
   
   _addItem: function (id) {
@@ -124,11 +126,21 @@ export default React.createClass({
     let updatedListItems = this.state.listItems;
     updatedListItems.push(item);
     
-    executeXHR('PUT', this.props.endpoint, (xhr) => {
-      this.setState({listItems: JSON.parse(xhr.responseText)})
-    }, JSON.stringify(updatedListItems), "application/json");
+    this._updateList(updatedListItems);
     this._clearListInput(id);
     this._focusOnListInput(id);
+  },
+  
+  _updateList: function (updatedListItems) {
+    executeXHR({
+      method: 'PUT',
+      endpoint: this.props.endpoint,
+      action: (xhr) => {
+        this.setState({listItems: JSON.parse(xhr.responseText)})
+      },
+      data: JSON.stringify(updatedListItems),
+      contentType: "application/json"
+    });
   },
   
   _constructListInputItem: function (id) {

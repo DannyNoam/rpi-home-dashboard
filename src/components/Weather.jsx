@@ -45,7 +45,11 @@ export default React.createClass({
   },
   
   _getWeatherData: function (endpoint) {
-    executeXHR('GET', endpoint, (xhr) => this.setState({weatherData: JSON.parse(xhr.responseText)}));
+    executeXHR({
+      method: 'GET',
+      endpoint: endpoint,
+      action: (xhr) => this.setState({weatherData: JSON.parse(xhr.responseText)})
+    });
   },
   
   _constructWeatherEndpoint: function (endpoint, apiKey, latitude, longitude) {

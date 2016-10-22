@@ -35,7 +35,11 @@ export default React.createClass({
   },
   
   _getArrivalsData: function (endpoint) {
-    executeXHR('GET', endpoint, (xhr) => this.setState({arrivalsData: JSON.parse(xhr.responseText)}));
+    executeXHR({
+      method: 'GET',
+      endpoint: endpoint,
+      action: (xhr) => this.setState({arrivalsData: JSON.parse(xhr.responseText)})
+    });
   },
   
   _renderArrivalsData: function (direction, maxNumberToRender) {
