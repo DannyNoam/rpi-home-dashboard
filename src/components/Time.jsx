@@ -1,6 +1,6 @@
 import React from "react";
 import {pollFor} from "../util/pollUtils.js";
-import {getHumanReadableTimeObject} from "../util/timeUtils.js";
+import {getDigitallyFormattedTime} from "../util/timeUtils.js";
 
 export default React.createClass({
   
@@ -32,7 +32,7 @@ export default React.createClass({
   
   _setTime: function () {
     this.setState({
-      time: getHumanReadableTimeObject()
+      time: getDigitallyFormattedTime()
     });
   }
 });
