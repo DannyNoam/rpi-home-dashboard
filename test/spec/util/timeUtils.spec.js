@@ -4,9 +4,7 @@ import {
   formatTimePart
 } from '../../../src/util/timeUtils.js';
 
-let chai = require('chai');
-let expect = chai.expect;
-let sinon = require('sinon');
+import {chai, expect, sinon} from '../../util/testUtils';
 
 describe('Given the timeUtils utility file', () => {
   describe('when calculateMinutesUntilArrival is called', () => {
