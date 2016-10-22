@@ -5,7 +5,7 @@ export function calculateMinutesUntilArrival(timeOfArrivalData) {
 	return minutesUntilArrival > 0 ? minutesUntilArrival : 0;
 }
 
-export function getHumanReadableTimeObject() {
+export function getDigitallyFormattedTime() {
 	let today = new Date();
 	let hours = formatTimePart(today.getHours());
 	let minutes = formatTimePart(today.getMinutes());
