@@ -1,4 +1,5 @@
 export function executeXHR(properties) {
+  var x;
 	let xhr = new XMLHttpRequest();
   xhr.open(properties.method, properties.endpoint, true);
   xhr.onload = properties.action.bind(this, xhr);
