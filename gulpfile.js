@@ -6,7 +6,7 @@ var mocha = require('gulp-mocha');
 var babel = require('babel/register');
 
 gulp.task('lint', function () {
-  return gulp.src(['src/**.js', 'src/**.jsx', '!node_modules/**', '!bundle.js'])
+  return gulp.src(['**.js', '**.jsx', '!node_modules/**', '!bundle.js'])
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failAfterError());
