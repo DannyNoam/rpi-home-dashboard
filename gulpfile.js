@@ -1,9 +1,9 @@
-var gulp = require('gulp');
-var fs = require('fs');
-var eslint = require('gulp-eslint');
-var browserify = require('browserify');
-var mocha = require('gulp-mocha');
-var babel = require('babel/register');
+const gulp = require('gulp');
+const fs = require('fs');
+const eslint = require('gulp-eslint');
+const browserify = require('browserify');
+const mocha = require('gulp-mocha');
+const babel = require('babel/register');
 
 gulp.task('lint', function () {
   return gulp.src(['**.js', '**.jsx', '!node_modules/**', '!bundle.js'])
