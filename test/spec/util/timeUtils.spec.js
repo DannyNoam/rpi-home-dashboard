@@ -13,7 +13,7 @@ describe('Given the timeUtils utility file', () => {
       expected;
     
     beforeEach(() => {
-      dateStub = sinon.stub(Date, "now").returns(new Date(2016, 9, 22, 18, 30, 0, 0).getTime());
+      dateStub = sinon.stub(Date, "now").returns(new Date(Date.UTC(2016, 9, 22, 17, 30, 0, 0)).getTime());
     });
   
     afterEach(() => {
