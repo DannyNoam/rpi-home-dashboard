@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/DannyNoam/rpi-home-dashboard.svg?branch=master)](https://travis-ci.org/DannyNoam/rpi-home-dashboard)
 [![codecov](https://codecov.io/gh/DannyNoam/rpi-home-dashboard/branch/master/graph/badge.svg)](https://codecov.io/gh/DannyNoam/rpi-home-dashboard)
+[![Code Climate](https://codeclimate.com/github/DannyNoam/rpi-home-dashboard/badges/gpa.svg)](https://codeclimate.com/github/DannyNoam/rpi-home-dashboard)
 
 ### Dev Setup
 - Clone the repository `https://github.com/DannyNoam/rpi-home-dashboard.git && cd home-dashboard`
