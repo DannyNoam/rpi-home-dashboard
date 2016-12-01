@@ -1,6 +1,5 @@
 import {getWeatherIcon, convertFahrenheitToCelcius} from '../../../src/util/weatherUtils.js';
-import weatherToIcons from '../../../src/config/weatherToIcons.js';
-import {chai, expect, sinon} from '../../util/testUtils';
+import {expect} from '../../util/testUtils';
 
 describe('Given the weatherUtils utility file', () => {
   describe('when the getWeatherIcon function is called', () => {

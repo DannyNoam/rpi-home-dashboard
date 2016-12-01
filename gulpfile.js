@@ -7,15 +7,20 @@ const babel = require('babel-core/register');
 const istanbul = require('gulp-istanbul');
 const isparta = require('isparta');
 
+const SOURCE_JS_FILES = 'src/**/*.js';
+const SOURCE_JSX_FILES = 'src/**/*.jsx';
+const SOURCE_JS_SPEC_FILES = 'test/spec/**/*.spec.js';
+const SOURCE_JSX_SPEC_FILES = 'test/spec/**/*.spec.jsx';
+
 gulp.task('lint', function () {
-  return gulp.src(['**.js', '**.jsx', '!node_modules/**', '!bundle.js'])
+  return gulp.src([SOURCE_JS_FILES, SOURCE_JSX_FILES, SOURCE_JS_SPEC_FILES, SOURCE_JSX_SPEC_FILES])
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failAfterError());
 });
 
 gulp.task('pre-test', function () {
-  return gulp.src(['src/**/*.js', 'src/**/*.jsx', '!node_modules/**', '!bundle.js'])
+  return gulp.src([SOURCE_JS_FILES, SOURCE_JSX_FILES])
     .pipe(istanbul({
       instrumenter: isparta.Instrumenter,
       babel: {
@@ -27,7 +32,7 @@ gulp.task('pre-test', function () {
 });
 
 gulp.task('test', ['pre-test'], function () {
-  return gulp.src(['test/spec/**/*.spec.js', 'test/spec/**/*.spec.jsx', '!node_modules/**'])
+  return gulp.src([SOURCE_JS_SPEC_FILES, SOURCE_JSX_SPEC_FILES])
     .pipe(mocha({
       ui: "bdd",
       compilers: {

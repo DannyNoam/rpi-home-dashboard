@@ -1,5 +1,5 @@
 import {pollFor} from '../../../src/util/pollUtils.js';
-import {chai, expect, sinon} from '../../util/testUtils';
+import {expect, sinon} from '../../util/testUtils';
 
 describe('Given the pollUtils utility file', () => {
   describe('when pollFor is called with a given action and time value', function () {
