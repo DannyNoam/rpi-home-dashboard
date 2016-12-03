@@ -41,6 +41,7 @@
     "gulp-react": "^3.0.1",
     "isparta": "^4.0.0",
     "jasmine": "^2.5.2",
+    "jsdom": "^9.8.3",
     "mocha": "^3.1.2",
     "mocha-jsdom": "^1.1.0",
     "run-sequence": "^1.2.2",

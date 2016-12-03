@@ -12,14 +12,14 @@ const SOURCE_JSX_FILES = 'src/**/*.jsx';
 const SOURCE_JS_SPEC_FILES = 'test/spec/**/*.spec.js';
 const SOURCE_JSX_SPEC_FILES = 'test/spec/**/*.spec.jsx';
 
-gulp.task('lint', function () {
+gulp.task('lint', () => {
   return gulp.src([SOURCE_JS_FILES, SOURCE_JSX_FILES, SOURCE_JS_SPEC_FILES, SOURCE_JSX_SPEC_FILES])
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failAfterError());
 });
 
-gulp.task('pre-test', function () {
+gulp.task('pre-test', () => {
   return gulp.src([SOURCE_JS_FILES, SOURCE_JSX_FILES])
     .pipe(istanbul({
       instrumenter: isparta.Instrumenter,
@@ -31,7 +31,7 @@ gulp.task('pre-test', function () {
     .pipe(istanbul.hookRequire());
 });
 
-gulp.task('test', ['pre-test'], function () {
+gulp.task('test', ['pre-test'], () => {
   return gulp.src([SOURCE_JS_SPEC_FILES, SOURCE_JSX_SPEC_FILES])
     .pipe(mocha({
       ui: "bdd",
@@ -42,9 +42,11 @@ gulp.task('test', ['pre-test'], function () {
     .pipe(istanbul.writeReports())
 });
 
-gulp.task('default', ['lint', 'test'], function () {
+gulp.task('default', () => {
   return browserify('./src/index.js')
     .transform('babelify')
     .bundle()
     .pipe(fs.createWriteStream('bundle.js'));
 });
+
+gulp.task('dev', ['lint', 'test', 'default']);
