@@ -12,7 +12,7 @@ export default React.createClass({
     return (
       <div>
         <News refreshRate={ refreshRates.NEWS }/>
-        <Time refreshRate={ refreshRates.TIME }/>
+        <Time />
         <Weather refreshRate={ refreshRates.WEATHER }/>
       </div>
     );

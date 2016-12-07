@@ -1,6 +1,5 @@
 export default ({
 	NEWS: 60000,
-	TIME: 1000,
 	WEATHER: 300000,
 	CALENDAR: 300000,
 	LIST: 60000,
