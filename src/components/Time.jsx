@@ -1,14 +1,12 @@
 import React from "react";
-import {pollFor} from "../util/pollUtils.js";
+import pollFor from "../util/pollUtils.js";
 import {getDigitallyFormattedTime} from "../util/timeUtils.js";
+
+const TIME_REFRESH_RATE = 1000;
 
 export default React.createClass({
   
   displayName: 'Time',
-  
-  propTypes: {
-    refreshRate: React.PropTypes.number.isRequired
-  },
   
   getInitialState: function () {
     return {
@@ -19,7 +17,7 @@ export default React.createClass({
   componentDidMount: function () {
     pollFor(() => {
       this._setTime()
-    }, this.props.refreshRate);
+    }, TIME_REFRESH_RATE);
   },
   
   render: function () {
